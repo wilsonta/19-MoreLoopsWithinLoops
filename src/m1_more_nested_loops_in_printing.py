@@ -4,18 +4,18 @@ in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Tim Wilson.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_triangle_right_justified()
-    run_test_triangle_upside_down()
+    #run_test_triangle_right_justified()
+    #run_test_triangle_upside_down()
     run_test_vee()
-    run_test_numbers_constant_forward()
-    run_test_numbers_constant_backwards()
-    run_test_numbers_increasing_forward()
+    #run_test_numbers_constant_forward()
+    #run_test_numbers_constant_backwards()
+    #run_test_numbers_increasing_forward()
 
 
 def run_test_triangle_right_justified():
@@ -55,8 +55,17 @@ def triangle_right_justified(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for j in range(r-1,k,-1):
+            print(' ',end='')
+        for n in range(k+1):
+            print(n+1,end='')
+        print()
+
+
+
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -109,8 +118,14 @@ def triangle_upside_down(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for j in range(k):
+            print('*',end='')
+        for n in range(1,r+1-k):
+            print(n,end='')
+        print()
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -160,6 +175,16 @@ def vee(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for j in range(k):
+            print(' ',end='')
+        for n in range(1,r-k+1):
+            print(n,end='')
+        print('-',end='')
+        for m in range(r-k,0,-1):
+            print(m,end='')
+        print()
+
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #          Some tests are already written for you (above).

@@ -4,8 +4,8 @@ in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Tim Wilson.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -72,6 +72,13 @@ def largest_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
+    for k in range(len(seq_seq)):
+        sequence=seq_seq[k]
+        sequenceintial=seq_seq[0]
+        max=sequenceintial[0]
+        for j in range(len(sequence)):
+            if sequence[j]>max:
+                max=sequence[j]
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).

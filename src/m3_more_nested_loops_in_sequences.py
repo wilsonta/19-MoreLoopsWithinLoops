@@ -72,13 +72,14 @@ def largest_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
+    sequenceintial = seq_seq[0]
+    max = sequenceintial[0]
     for k in range(len(seq_seq)):
         sequence=seq_seq[k]
-        sequenceintial=seq_seq[0]
-        max=sequenceintial[0]
         for j in range(len(sequence)):
-            if sequence[j]>max:
+            if sequence[j]>=max:
                 max=sequence[j]
+    return max
     # -------------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).

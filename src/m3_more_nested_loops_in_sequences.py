@@ -72,16 +72,17 @@ def largest_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
-    sequenceintial = seq_seq[0]
-    max = sequenceintial[0]
+    max=None
     for k in range(len(seq_seq)):
         sequence=seq_seq[k]
         for j in range(len(sequence)):
+            if max==None:
+                max=sequence[j]
             if sequence[j]>=max:
                 max=sequence[j]
     return max
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
@@ -99,7 +100,12 @@ def run_test_largest_negative_number():
     print('-------------------------------------------------')
     print('Testing the   LARGEST_NEGATIVE_NUMBER   function:')
     print('-------------------------------------------------')
-
+    #Test1
+    sequence=[35,60,-10,-100,0]
+    expected=-100
+    actual=largest_negative_number(sequence)
+    print('Expected',expected)
+    print('Actual')
 
 def largest_negative_number(seq_seq):
     """
@@ -123,6 +129,11 @@ def largest_negative_number(seq_seq):
     and the given argument is a sequence of sequences,
     where each subsequence contains only numbers.
     """
+    lneg=None
+    for k in range(len(seq_seq)):
+        if seq_seq[k]<lneg:
+            lneg=seq_seq[k]
+    return lneg
     # -------------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
